@@ -10,6 +10,14 @@ Array.prototype.forEach.call(links, (link) => {
     link.addEventListener("mouseleave", () => {
         customCursor.classList.replace("hover", "cursor");
     });
+
+    link.addEventListener("mousedown", () => {
+        customCursor.classList.add("clicked"); // pressed state
+    });
+
+    link.addEventListener("mouseup", () => {
+        customCursor.classList.remove("clicked"); // released state
+    });
 });
 
 window.addEventListener("mousemove", (e) => {
